@@ -3,6 +3,31 @@
 <head>
   <meta charset="utf-8">
   <title>MyTtApp</title>
+  <meta http-equiv="Content-Security-Policy" content="trusted-types *">
+  <script>
+    TrustedTypes.createPolicy('default', {
+      createURL(s) {
+        debugger;
+        console.log('default policy called with ', s);
+        return s;
+      },
+      createScript(s) {
+        debugger;
+        console.log('default policy called with ', s);
+        return s;
+      },
+      createScriptURL(s) {
+        debugger;
+        console.log('default policy called with ', s);
+        return s;
+      },
+      createHTML(s) {
+        debugger;
+        console.log('default policy called with ', s);
+        return s;
+      }
+    }, true);
+  </script>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">

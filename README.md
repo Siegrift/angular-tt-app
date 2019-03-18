@@ -1,10 +1,57 @@
 # MyTtApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6
+
+# Setup the repository
+
+```bash
+$ git clone https://github.com/koto/angular-tt-app/
+$ cd angular-tt-app
+$ git checkout --track origin/tt
+```
+
+## Use yarn instead of npm
+This makes linking to local packages easier.
+
+```bash
+yarn global add @angular/cli
+ng config -g cli.packageManager yarn
+# In angular-tt-app/
+yarn install
+```
+
+## Use local Angular framework (instead of an NPM package)
+
+Prepare angular repository:
+
+```bash
+$ git checkout https://github.com/koto/angular
+$ cd angular
+$ git checkout --track origin/trusted-types
+$ yarn install
+```
+
+Build modified NPM packages of the Angular framework:
+
+```bash
+$ yarn run bazel build //packages/core:npm_package //packages/platform-browser:npm_package
+```
+
+[Link](https://yarnpkg.com/lang/en/docs/cli/link/) the packages:
+
+```
+$ (cd dist/bin/packages/core/npm_package && yarn link)
+$ (cd dist/bin/packages/platform-browser/npm_package && yarn link)
+```
+
+```bash
+$ cd /path/to/angular-tt-app
+$ yarn link @angular/core @angular/platform-browser
+```
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` (or `yarn run ng serve`) for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
