@@ -12,6 +12,6 @@ const POLICY_NAME_PROVIDER = {
   provide: TRUSTED_TYPE_POLICY_NAME, useValue: 'angular-please-use-this'};
 
 platformBrowserDynamic([
-  //POLICY_NAME_PROVIDER
+  // POLICY_NAME_PROVIDER
 ]).bootstrapModule(AppModule)
   .catch(err => console.error(err));

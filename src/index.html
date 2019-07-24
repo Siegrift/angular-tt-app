@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   <title>MyTtApp</title>
-  <meta http-equiv="Content-Security-Policy" content="trusted-types *">
+  <meta http-equiv="Content-Security-Policy" content="trusted-types app-root-policy @angular/platform-browser default">
+  <script src="https://wicg.github.io/trusted-types/dist/es5/trustedtypes.build.js"></script>
   <script>
     TrustedTypes.createPolicy('default', {
       createURL(s) {
-        debugger;
-        console.log('default policy called with ', s);
+        console.log('DEFAULT url:', s);
         return s;
       },
       createScript(s) {
-        debugger;
-        console.log('default policy called with ', s);
+        console.log('DEFAULT script:', s);
         return s;
       },
       createScriptURL(s) {
-        debugger;
-        console.log('default policy called with ', s);
+        console.log('DEFAULT script url: ', s);
         return s;
       },
       createHTML(s) {
-        debugger;
-        console.log('default policy called with ', s);
+        console.log('DEFAULT html:', s);
         return s;
       }
     }, true);
