@@ -25,28 +25,32 @@ yarn install
 Prepare angular repository:
 
 ```bash
-$ git checkout https://github.com/koto/angular
-$ cd angular
-$ git checkout --track origin/trusted-types
-$ yarn install
+git checkout https://github.com/koto/angular
+cd angular
+git checkout --track origin/trusted-types
+yarn install
 ```
 
 Build modified NPM packages of the Angular framework:
 
 ```bash
-$ yarn run bazel build //packages/core:npm_package //packages/platform-browser:npm_package
+yarn run bazel build //packages/core:npm_package //packages/platform-browser:npm_package //packages/http:npm_package //packages/common:npm_package //packages/router:npm_package
 ```
 
 [Link](https://yarnpkg.com/lang/en/docs/cli/link/) the packages:
 
 ```
-$ (cd dist/bin/packages/core/npm_package && yarn link)
-$ (cd dist/bin/packages/platform-browser/npm_package && yarn link)
+cd dist/bin/packages/core/npm_package && yarn link
+cd dist/bin/packages/platform-browser/npm_package && yarn link
+cd dist/bin/packages/http/npm_package && yarn link
+cd dist/bin/packages/common/npm_package && yarn link
+cd dist/bin/packages/router/npm_package && yarn link
 ```
 
 ```bash
-$ cd /path/to/angular-tt-app
-$ yarn link @angular/core @angular/platform-browser
+cd /path/to/angular-tt-app
+yarn link @angular/core
+# same for other packages
 ```
 
 ## Development server

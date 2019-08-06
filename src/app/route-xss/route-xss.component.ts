@@ -12,8 +12,10 @@ export class RouteXssComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.innerHTML = params['html']
+    this.activatedRoute.url.subscribe(url => {
+      if (!url[0]) return;
+      // Angular santizies even these values
+      this.innerHTML = url[0].path.substring(5);
     });
   }
 

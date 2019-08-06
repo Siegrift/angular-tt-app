@@ -9,9 +9,9 @@ if (environment.production) {
 }
 
 const POLICY_NAME_PROVIDER = {
-  provide: TRUSTED_TYPE_POLICY_NAME, useValue: 'angular-please-use-this'};
+  provide: TRUSTED_TYPE_POLICY_NAME, useValue: 'angular-security-policy'};
 
 platformBrowserDynamic([
-  // POLICY_NAME_PROVIDER
+  POLICY_NAME_PROVIDER
 ]).bootstrapModule(AppModule)
   .catch(err => console.error(err));

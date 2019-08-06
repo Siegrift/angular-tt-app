@@ -11,6 +11,6 @@ export class AppComponent {
 
   // try: http://localhost:4200/xss?html=<img src=x onerror=alert(0) />
   changeLink(link) {
-    this.unsafeLink = 'xss?' + link
+    this.unsafeLink = 'html?' + link
   }
 }
