@@ -50,6 +50,10 @@ cd dist/bin/packages/router/npm_package && yarn link
 ```bash
 cd /path/to/angular-tt-app
 yarn link @angular/core
+yarn link @angular/platform-browser
+yarn link @angular/http
+yarn link @angular/common
+yarn link @angular/router
 # same for other packages
 ```
 
