@@ -1,8 +1,8 @@
-let componentPolicy: TrustedTypePolicy | undefined
+let componentPolicy: any
 
-export function getPolicy(): TrustedTypePolicy {
+export function getPolicy(): any {
   if (componentPolicy === undefined) {
-    componentPolicy = TrustedTypes.createPolicy('app-root-policy', {
+    const rules = {
       createHTML(s: string): string {
         console.log('App createHTML', s)
         return s;
@@ -19,7 +19,9 @@ export function getPolicy(): TrustedTypePolicy {
         console.log('App createScript', s)
         return s;
       },
-    });
+    }
+    if (typeof TrustedTypes === 'undefined') componentPolicy = rules;
+    else componentPolicy = TrustedTypes.createPolicy('app-root-policy', rules);
   }
   return componentPolicy
 }

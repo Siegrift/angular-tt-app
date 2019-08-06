@@ -28,7 +28,7 @@ import { BrowserDomAdapterComponent } from './browser-dom-adapter/browser-dom-ad
     BrowserDomAdapterComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     JsonpModule,
     BrowserModule,

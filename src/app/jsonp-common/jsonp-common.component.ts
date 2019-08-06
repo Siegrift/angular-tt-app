@@ -53,9 +53,9 @@ export class SearchService {
   styleUrls: ['./jsonp-common.component.css']
 })
 export class JsonpCommonComponent {
-  private loading: boolean = false;
-  private results: Observable<SearchItem[]>;
-  private searchField: FormControl;
+  loading: boolean = false;
+  results: Observable<SearchItem[]>;
+  searchField: FormControl;
 
   constructor(private itunes: SearchService) {}
 

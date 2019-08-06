@@ -10,6 +10,7 @@ import { getPolicy } from '../trustedTypesPolicy';
 export class MainComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) {}
 
+  title = "Custom title"
   ownPolicyHtml = getPolicy().createHTML('<img src=x onclick=alert(/ownPolicy/)>');
   bypassSecurityHtml = this.sanitizer.bypassSecurityTrustHtml('<i>bypassSecurityTrustHtml</i>');
   constHref = "https://angular.io/tutorial"

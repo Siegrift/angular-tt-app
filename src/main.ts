@@ -11,7 +11,9 @@ if (environment.production) {
 const POLICY_NAME_PROVIDER = {
   provide: TRUSTED_TYPE_POLICY_NAME, useValue: 'angular-security-policy'};
 
-platformBrowserDynamic([
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic([
   POLICY_NAME_PROVIDER
 ]).bootstrapModule(AppModule)
   .catch(err => console.error(err));
+});
