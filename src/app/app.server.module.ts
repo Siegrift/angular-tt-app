@@ -4,6 +4,7 @@ import { ServerModule } from '@angular/platform-server';
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+import {ServerTransferStateModule} from '@angular/platform-server';
 import {TRUSTED_TYPE_POLICY_NAME} from '@angular/platform-browser';
 
 const POLICY_NAME_PROVIDER = {
@@ -14,6 +15,7 @@ const POLICY_NAME_PROVIDER = {
     AppModule,
     ServerModule,
     ModuleMapLoaderModule,
+    ServerTransferStateModule,
   ],
   providers: [POLICY_NAME_PROVIDER],
   bootstrap: [AppComponent],

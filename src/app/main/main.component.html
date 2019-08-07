@@ -3,6 +3,9 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <script>
+    {{title}}
+  </script>
   own policy: 
   <div [innerHTML]="ownPolicyHtml"></div>
   bypassSecurity: 
@@ -19,3 +22,7 @@
     <h2><a target="_blank" rel="noopener" [href]="constHref">Tour of Heroes</a></h2>
   </li>
 </ul>
+
+<div [textContent]="constHref"></div>
+<div text="constHref"></div>
+<div textContent="constHref"></div>

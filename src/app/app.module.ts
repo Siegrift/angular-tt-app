@@ -1,12 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule} from "@angular/core";
+import { BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
+import { NgModule} from '@angular/core';
 import {JsonpModule} from '@angular/http';
 
 import {
   HttpClientJsonpModule,
   HttpClientModule,
-} from "@angular/common/http";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+} from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { JsonPComponent } from './json-p/json-p.component';
 import { RouteXssComponent } from './route-xss/route-xss.component';
 import { JsonpCommonComponent, SearchService } from './jsonp-common/jsonp-common.component';
 import { BrowserDomAdapterComponent } from './browser-dom-adapter/browser-dom-adapter.component';
+import { I18nComponent } from './i18n/i18n.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserDomAdapterComponent } from './browser-dom-adapter/browser-dom-ad
     RouteXssComponent,
     JsonpCommonComponent,
     BrowserDomAdapterComponent,
+    I18nComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -35,7 +37,8 @@ import { BrowserDomAdapterComponent } from './browser-dom-adapter/browser-dom-ad
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    BrowserTransferStateModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
